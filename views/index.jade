@@ -3,42 +3,52 @@ extends layout
 block content
     h1 Air Fare Calculator
     form(action='/' method='post')
-      div(class='depart')
-        label Departure City
-          p
-          select(name='departurecity')
-            option(value="chicago") Chicago
-            option(value='losangeles') Los Angeles
-            option(value='newyork') New York
       div
-        label Arrival City
-          p
-          select(name='arrivalcity')
-            option(value='chicago') Chicago
-            option(value='losangeles') Los Angeles
-            option(value='newyork') New York
-      div
-        label Checked bags
-          input(type="number" name='bags' min='0')
-      div
-        label Class
-          p
-          select(id="upgrade" name='upgrade')
-            option(value='0') &nbsp
-            option(value='200') Business (+ $200)
-            option(value='500') First (+ $500)
-      
-      div
-        p
-        label Wifi
-          input(type='checkbox' value='12' name='wifi')
-      p
-      div
-        label(for='save' name='discount') Discount Code
-          p
-          input(type='text')
-      div 
-        p
-        button(type='submit') Calculate Price
-      p Your Price is $ #{price}
+      #maincontainer
+        div
+        #departure
+          label Departure City
+            <br>
+            select(name='departurecity')
+              option(value="chicago") Chicago
+              option(value='losangeles') Los Angeles
+              option(value='newyork') New York
+        div
+        #arrival
+          label Arrival City
+            <br>
+            select(name='arrivalcity')
+              option(value='chicago') Chicago
+              option(value='losangeles') Los Angeles
+              option(value='newyork') New York
+        div
+        #checked
+          label Checked bags
+            input(type="number" name='bags' min='0')
+        div
+        #class
+          label Class
+            <br>
+            select(name='upgrade')
+              option(value='0') &nbsp
+              option(value='200') Business (+ $200)
+              option(value='500') First (+ $500)
+        
+        div
+        #wifi
+          
+          label Wifi
+            input(type='checkbox' value='12' name='wifi')
+        
+        div
+        #discount
+          label Discount Code
             
+            input(type='text' name='discount')
+        div 
+        #submit
+          
+          button(type='submit') Calculate Price
+          <br>
+          Your Price is $ #{price}
+              

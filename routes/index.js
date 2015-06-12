@@ -11,9 +11,10 @@ router.post('/', function(req, res, next){
   var arrivalCity= req.body.arrivalcity;
   var classUpgrade= req.body.upgrade;
   var wifi= req.body.wifi;
-  var dicountCode= req.body.discount;
-  var bags= req.body.bags
-  var total= functions.cost(departureCity, arrivalCity) + functions.bags(bags) + Number(classUpgrade) + functions.wifi(wifi)
+  var discountCode= req.body.discount;
+  var bags= req.body.bags;
+  var total= functions.cost(departureCity, arrivalCity, bags, wifi, discountCode) + Number(classUpgrade)
+  console.log(total);
   res.render('index', { price: total});
 })
 
