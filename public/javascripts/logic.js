@@ -1,10 +1,8 @@
 module.exports = {
   cost: function(departure, arrival, bags, wifi, discountCode) {
     if (departure === arrival){
-      flight= 0;
+      throw new Error("Choose different flights");
     }
-      if (flight= 0)
-        return "CHANGE FLIGHT"
     else if (departure === "chicago" && arrival === "newyork") {
       flight= 250;
     }
